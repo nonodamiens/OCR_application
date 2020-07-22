@@ -1,10 +1,10 @@
 import sqlite3
 import traceback
 
-DB_PATH = './comments.db'   # Update this path accordingly
+DB_PATH = './OCR.db'   # Update this path accordingly
 
 
-def add_to_list(comment):
+def add_to_list(url, text):
 
     try:
         conn = sqlite3.connect(DB_PATH)
@@ -12,13 +12,17 @@ def add_to_list(comment):
         # Once a connection has been established, we use the cursor
         # object to execute queries
         c = conn.cursor()
-        print (comment)
+        # print (text)
         # Keep the initial status as Not Started
-        c.execute("insert into comments values ('{value}');".format(value = comment))
+        res = c.execute("SELECT MAX(id) FROM RESULTS")
+        id = res.fetchone()[0]
+        id += 1
+        print(id)
+        c.execute("insert into RESULTS values ('{id}', '{url}', '{value}');".format(id = id, url = url, value = text))
 
         # We commit to save the change
         conn.commit()
-        return {"comment": comment}
+        return {"texte": text}
     except Exception as e:
         # print('Error: ', e)
         print(traceback.format_exc())
