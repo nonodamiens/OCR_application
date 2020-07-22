@@ -25,23 +25,29 @@ def get_image():
         req = request.form.to_dict()
         url = req["image"]
         text = get_text_from_url(url)
+
+        text_to_db = '\n'.join(text)
+        res_data = helper.add_to_list(url, text_to_db)
+        if res_data is None:
+            response = Response("{'error': 'text not added - " + text_to_db + "'}", status=400 , mimetype='application/json')
+            return response
+
         return render_template("result.html", text=text) 
 
 
 
     # return render_template("/index.html")
-    return render_template("index.html")
+    # return render_template("index.html")
 
-# def save_image(image):
     # req_data = request.get_json()
-    # comment = req_data['comment']
+    # text = req_data[text]
 
     # # Add comment to the list
-    # res_data = helper.add_to_list(comment)
+    # res_data = helper.add_to_list(text)
 
     # # Return error if comment not added
     # if res_data is None:
-    #     response = Response("{'error': 'comment not added - " + comment + "'}", status=400 , mimetype='application/json')
+    #     response = Response("{'error': 'text not added - " + text + "'}", status=400 , mimetype='application/json')
     #     return response
 
     # # Return response
