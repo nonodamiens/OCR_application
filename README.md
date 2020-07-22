@@ -1,3 +1,3 @@
 # OCR application #
 
-This is an flask app OCR with Azure Cognitive Services made for learnings validation.
+This is a flask app OCR with Azure Cognitive Services made for learnings validation.
