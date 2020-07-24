@@ -1,0 +1,48 @@
+body{
+    text-align: justify;
+    padding: 0.5%;
+} 
+
+.container{
+	background-color: cadetblue;
+	color: white;
+	padding: 2% 10%;
+	min-height: 500px
+}
+
+.centered{
+    text-align: center;
+}
+
+h3 {
+	text-align: center;
+	margin-top: 40px
+}
+
+.title{
+    margin-bottom: 10%;
+}
+
+.text{
+	margin: auto;
+    background: black;
+    width: fit-content;
+    padding: 5px 10px;
+}
+
+.image{
+	text-align: center;
+}
+
+p {
+	text-align: center;
+	margin-top: 20px;
+}
+
+a {
+	color:white;
+}
+
+a:hover {
+	color:white;
+}
