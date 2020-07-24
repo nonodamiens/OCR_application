@@ -140,3 +140,6 @@ def get_text_from_url(url_image):
         text.append(line['text'])
 
     return text
+
+if __name__ == '__main__':
+    app.run(debug=True,host='0.0.0.0')
