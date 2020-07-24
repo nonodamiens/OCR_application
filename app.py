@@ -56,6 +56,7 @@ def get_image():
 
 
 def get_text_from_url(url_image):
+    print(COMPUTER_VISION_ENDPOINT)
     missing_env = False
     # Add your Computer Vision subscription key and endpoint to your environment variables.
     if 'COMPUTER_VISION_ENDPOINT' in os.environ:
