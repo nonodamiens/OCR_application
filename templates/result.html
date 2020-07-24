@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>OCR-RESULT</title>
+</head>
+
+<body>
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-12 align-self-center title">
+                <h1 class="centered">SECURITY BILLS</h1>
+                <h2 class="centered">your bills confident</h2>
+            </div>
+        </div>
+  
+    <h3>Texte détecté</h3>
+    <div class="text">
+        {% for para in text %}
+            {{para}}<br />
+        {% endfor %}
+    </div>
+    <h3>Image et détection</h3>
+    <div class="image">
+        <img src="{{url_for('static', filename='result.png')}}" alt="OCR detection image result">
+    </div>
+    <p>
+        <a href="/">Retour à la page d'accueil</a>
+    </p>
+</div>
+</body>
+
+</html>
