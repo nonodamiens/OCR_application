@@ -1,1 +1,0 @@
-web: gunicorn OCR-application.wsgi --log-file -
