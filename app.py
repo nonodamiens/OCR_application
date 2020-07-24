@@ -3,7 +3,6 @@ import requests
 from flask import Flask, request, Response, render_template, redirect 
 import json
 import time
-# from requests import get, post
 import urllib
 import os
 import sys
@@ -34,29 +33,7 @@ def get_image():
 
         return render_template("result.html", text=text) 
 
-
-
-    # return render_template("/index.html")
-    # return render_template("index.html")
-
-    # req_data = request.get_json()
-    # text = req_data[text]
-
-    # # Add comment to the list
-    # res_data = helper.add_to_list(text)
-
-    # # Return error if comment not added
-    # if res_data is None:
-    #     response = Response("{'error': 'text not added - " + text + "'}", status=400 , mimetype='application/json')
-    #     return response
-
-    # # Return response
-    # response = Response(json.dumps(res_data), mimetype='application/json')
-
-
-
 def get_text_from_url(url_image):
-    print(os.environ['COMPUTER_VISION_ENDPOINT'])
     missing_env = False
     # Add your Computer Vision subscription key and endpoint to your environment variables.
     if 'COMPUTER_VISION_ENDPOINT' in os.environ:
@@ -76,9 +53,6 @@ def get_text_from_url(url_image):
     if missing_env:
         print("**Restart your shell or IDE for changes to take effect.**")
         sys.exit()
-
-    # subscription_key = '6ca982264ca74eeaa7995357bd115af4'
-    # endpoint = 'https://projet-ocr-msp2.cognitiveservices.azure.com'
 
     text_recognition_url = endpoint + "/vision/v3.0/read/analyze"
 
@@ -113,7 +87,6 @@ def get_text_from_url(url_image):
         if ("status" in analysis and analysis['status'] == 'failed'):
             poll = False
 
-
     polygons = []
     if ("analyzeResult" in analysis):
         # Extract the recognized text, with bounding boxes.
@@ -131,7 +104,6 @@ def get_text_from_url(url_image):
         patch = Polygon(vertices, closed=True, fill=False, linewidth=2, color='y')
         ax.axes.add_patch(patch)
         plt.text(vertices[0][0], vertices[0][1], text, fontsize=20, va="top")
-    # plt.show()
     fig.savefig('static/result.png', bbox_inches='tight')
 
     # Making the text response
