@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>SECURITY BILLS</title>
+</head>
+
+<body>
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-12 align-self-center title">
+                <h1 class="centered">SECURITY BILLS</h1>
+                <h2 class="centered">your bills confident</h2>
+            </div>
+        </div>
+  
+    <h3>Numérisez vos documents</h3>
+    <p>Entrez l'url d'une image contenant du texte afin de récupérer son contenu.</p>
+    <form action="/result" method="post">
+        <!-- <input type="textarea" value="Commentaire" />  -->
+
+        <div class="form-group">
+            <input  name="image" type="text" class="form-control" aria-describedby="emailHelp"
+                placeholder="Url de l'image">
+        </div>
+
+        <!-- <input type="text" name="comment" placeholder="Url de l'image"> -->
+        <button  class="btn btn-primary" type="submit">Envoyer la photo</button>
+
+    </form>
+</div>
+</body>
+
+</html>
