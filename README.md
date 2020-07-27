@@ -1,8 +1,12 @@
-# MSP-2
-MSP-2 Preparation
+# OCR APP #
+Application to extract text from image.
 
-Vous êtes une entreprise qui possède une grande quantité d'images retraçant des opérations de vente passées (par exemple). Vous avez besoin d'obtenir les informations de texte contenues dans ces fichiers. Vous décidez pour cela d'utiliser une api d'OCR (Reconnaissance Optique de Caractères) afin d'extraire le texte des images.
+This application was made for a training course project.
 
-[Application 2](https://ibb.co/R9JyvZF)
-<br>
-<a href="https://ibb.co/R9JyvZF"><img src="https://i.ibb.co/R9JyvZF/Capture-d-e-cran-de-2020-07-20-09-50-26.png" alt="Capture-d-e-cran-de-2020-07-20-09-50-26" border="0"></a>
+The purpose was to create an Flask OCR application for business case uing Azure Cognitive Services.
+Data are stored inside an sql3 database (link of the image and text detected)
+The application was first dockerized before pushed to Azure.
+
+The application was deploy on Azure and Heroku with success.
+
+It is very basic application and not intend to be used in production.
